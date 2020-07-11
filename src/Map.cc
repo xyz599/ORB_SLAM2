@@ -361,6 +361,10 @@ void Map::Load ( const string &filename, SystemSetting* mySystemSetting, KeyFram
             kf->AddConnection(kf_by_id[id],weight);
         }
    }
+    for( auto kf: kf_by_order )
+    {
+        kf->UpdateConnections();
+    }
    cerr<<"Map.cc :: Parent Load OVER!"<<endl;
    for ( auto mp: vmp )
    {
